@@ -9,4 +9,4 @@
 
 --JavaScript is also used to deploy searchboxes when a Title of a given note is not entered,a note is deleted.It also ensures the user to check twice before deleting a note.JavaScript also ensures in accomodating all languages and makes sure no Error texts are thrown back while using special character like emojis,languages such as japanese chinese etc.
 
--
+-JavaScript also makes sure redundency does not happen by making sure that no duplicate notes by the same title are created.This helps the user to effieciently maintain data without repetition.
