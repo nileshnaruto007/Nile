@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteTaker</title>
+    <meta name="description"
+        content="A Notes-taking-Website to write your notes, to-do list , reminders with several features. NoteTaker allows you to save , add, delete ,edit and pin your notes. It also helps you to search a specific note from all of your notes " />
+    <!--bootstrap css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!-- font awesome  css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- font awesome  js-->
+    <script src="https://kit.fontawesome.com/bedcc42e79.js" crossorigin="anonymous"></script>
+    <!-- google font family -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Audiowide|Roboto|Architects Daughter&effect=fire">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png">
+
+    <meta name="theme-color" content="#ffffff">
+
+</head>
+
+<body>
+    <main>
+        <nav class="navbar   fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" class="note-making site" href="#"><i class="fa fa-book" aria-hidden="true"></i>
+                    NoteTaker</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#My_Notes">My Notes</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-0.75" id="search_textarea" placeholder="Search here..."
+                            aria-label="Search"><button id="close_search_btn"><i class="fa fa-close" id="close_search"
+                                style="color:#808080;"></i></button>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Search Filter
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-d  ark" aria-labelledby="dropdownMenuButton2">
+                                <li><button class="dropdown-item" id="search_by_title" type="button">Search in
+                                            title</button></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><button class="dropdown-item" type="button" id="search_by_body">Search in
+                                            body</button></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><button class="dropdown-item" type="button" id="search_by_date">Search in
+                                            date</button></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><button class="dropdown-item" type="button" id="search_by_both"><b>Search
+                                            everywhere</b></button></li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <
+        <div class="container my-5">
+            <!-- "my-4": will leave a margin of 4 lines in y direction-->
+            <h1 id="welcome">NoteTaker <i class="fa fa-book" aria-hidden="true"></i>
+                <!-- Add class="font-effect-fire" to h1 tag to see fire effect-->
+            </h1>
+            <h5 id="motto">-A place to keep notes and track progress</h5><br>
+            <hr>
+            <p id="quote">"Loading a new quote..."</p>
+            <small id="author">Connect to server to load user quotes</small>
+            <br>
+            <hr>
+            <div class="my-2 mx-4 card">
+                <div class="card-body" id="main_card">
+                    <h3 class="card-title">Add a Note</h3>
+
+                    <div class="mb-3">
+                        <textarea class="form-control" id="add_note_title" rows="2" placeholder="Add Title"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" id="add_note_text" rows="4" placeholder="Add Body"></textarea>
+                    </div>
+                    <!--<div id="liveAlertPlaceholder"></div>-->
+                    <button type=" button" class="btn btn-primary" id="add_note_btn" title="Add Note">Add Note</button>
+                </div>
+            </div>
+
+            <hr>
+            <section id="My_Notes">
+                <h1 id="Your_Notes">Your Notes</h1>
+                <hr>
+
+                <div id="pinned_notes_container">
+                    <h4 id="pinnedNotes-header">Pinned Notes</h4>
+                    <div id="pin_notes" class="row container-fluid">
+                    </div>
+                </div>
+                <hr>
+                <div id="notes_container">
+                    <h4 id="pinnedNotes-header">All Notes</h4>
+                    <div id="notes" class="row container-fluid">
+                    </div>
+                </div>
+            </section>
+
+        </div>
+        <br>
+        <!-- toast for delete function -->
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <i class="fa fa-book" aria-hidden="true"></i>
+                    <strong class="me-auto">NoteTaker</strong>
+                    <button type="button" class="btn-close" id="cross_close" data-bs-dismiss="toast"
+                        aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    <b><i>NOTE:</i></b> Once deleted ,the note cannot be retrieved.<br>Are you sure you want to delete
+                    this
+                    note?
+                    <div class="mt-2 pt-2 border-top">
+                        <button type="button" id="confirm_delete" class="btn btn-primary btn-sm">Delete</button>
+                        <button type="button" id="close_warning" class="btn btn-secondary btn-sm"
+                            data-bs-dismiss="toast">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- toast for no title warning -->
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+            <div id="no_title" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <i class="fa fa-book" aria-hidden="true"></i>
+                    <strong class="me-auto"> UP-2-DATE</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    <b><i>NOTE:</i></b> Please add a Title to the Note
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+<script src="script.js"></script>
+
+</html>

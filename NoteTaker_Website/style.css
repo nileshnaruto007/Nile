@@ -1,0 +1,155 @@
+body {
+    background-color: black;
+    margin-top: 10%;
+}
+h3,h5{
+
+    color:#242585;
+
+}
+.d-flex{
+    margin-right: 2%;
+}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
+#welcome{
+    color: beige;
+   /* margin-left: 30%;*/
+   text-align: center;
+   font-family: "Hind";
+}
+hr:not([size]) {
+    color: gray;
+    height: 10px;
+}
+
+#motto{
+   /* margin-left: 34%;*/
+    color: darkgray;
+    text-align: center;
+    font-family: 'Architects Daughter',sans-serif;
+    font-size: 25px;
+}
+.card-title{
+    font-weight: bolder;
+    font-family: "Audiowide", sans-serif;
+    color: #121313;
+}
+#add_note_btn,.btn,.btn-primary {
+    background-color: black;
+    border: black;
+    color: white;
+}
+#add_note_btn:hover,.btn:hover,.btn-primary:hover,.btn-primary:focus{
+    background-color: white;
+    border-color: white;
+    color: black;
+    box-shadow:0 0px 0px 2px gainsboro ;
+}
+.time{
+    float: right;
+}
+.card{
+
+    background-color: #41464b;
+}
+.form-control{
+    background-color: #44264b;
+    border: 1px solid black;
+    color: black;
+}#add_note_text{
+    color:black;
+    font-weight: 600;
+    font-size: large;
+}
+#add_note_title{
+    color:black;
+    font-weight: 600;
+    font-size: larger;
+}
+#add_note_text:focus,#add_note_title:focus,.form-control:focus {
+    color: grey;
+    background-color: black;
+    border-color: gainsboro;
+    outline: 0;
+    box-shadow: 0 0px 0px 2px gainsboro;
+}
+#search_textarea{
+    color: white;
+    background-color: black;
+    border-color: black;
+    display: none;
+}
+#close_search{
+    margin-right: 2%;
+    margin-top: 3%;
+}
+#close_search_btn{
+    background-color: #212529;
+    border: 1px solid #212529;
+    display: none;
+}
+.card-text{
+
+    color: black;
+    font-weight: 500;
+}
+#Your_Notes{
+    color: black;
+    /*margin-left: 41.5%;*/
+    text-align: center;
+    font-family: "Audiowide", sans-serif;
+}
+.copyrightText{
+    width:100%;
+    padding: 8px 100px;
+    text-align: center;
+    color:#fff;
+    font-size: larger;
+    font-family: 'Roboto',sans-serif;
+
+}
+#quote{
+    color: darkslategray;
+    text-align: center;
+    font-style: italic;
+    font-size: 18px;
+}
+#author{
+    float: right;
+    color: slategray;
+    font-weight: bold;
+    font-style: italic;
+}
+.alert-success {
+    color: #0f5132;
+    background-color: lightgreen;
+    border-color: lightgreen;
+    font-weight: bold;
+    font-family: 'Roboto',sans-serif;
+}
+.toast{
+    width:350px;
+    /*height: 300px;*/
+    /*font-size: large;*/
+    font-weight: 600;
+    color: black;
+}
+.toast-header{
+    font-size: larger;
+    color: #41464b;
+}
+#confirm_delete{
+    margin-left: 0%;
+}
+#close_warning{
+
+    float: right;
+}
+.btn-sm{
+    font-size: 18px;
+}
+.edit_note{
+    float: right;
+}
