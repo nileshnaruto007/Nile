@@ -19,6 +19,6 @@
 --Split 4:Data Display:
           The data is then displayed in "Your Notes" according to the user data.These notes can be firther pinned by the user accoring to importance and prefernce.
 Split 5:Data storing :
-          The data manipulated is then stored into the csv file and then the user can acess them whenever necessary
+          The data manipulated is then stored into the csv file and then the user can acess them whenever necessary in the website and it is stored permanently until the user deletes it.
         
          
